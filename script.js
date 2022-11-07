@@ -3,85 +3,59 @@ function getComputerChoice () {
     let choice = Math.floor(Math.random() * 3); 
 
     if (choice === 0) {
-        return 'Rock';
+        return 'rock';
     } else if (choice === 1) {
-        return 'Paper';
+        return 'paper';
     } else {
-        return 'Scissors';
+        return 'scissors';
     }
     
 }
 
-function playGame(playerSelection, computerSelection = getComputerChoice()) {
-    
+function playRound (playerSelection, computerSelection) {
 
-    while (playerSelection !== ('Rock') || playerSelection !== ('Paper') || playerSelection !== ('Scissors')) {
+    // let computerInput = getComputerChoice();
+    // computerSelection = computerInput.toLowerCase();
 
+    // let playerInput = prompt(' Choose Rock , Paper , or Scissors...');
 
-        playerSelection = prompt('Type in Rock, Paper or Scissors');
+    playerSelection = playerSelection.toLowerCase();
+    let result = '';
+    console.log(computerSelection);
+    console.log(playerSelection);
 
-        
-        // check for appropriate answer 
-        if (playerSelection === ('Rock') || playerSelection === ('Paper') || playerSelection === ('Scissors')) {
+    if (playerSelection === 'rock') { 
 
-            // continue game
+        computerSelection === 'paper' ? result = (`YOU LOSE! Paper beats Rock`) :
+        computerSelection === 'scissors' ? result = ('YOU WIN! Rock beats Scissors') :
+        result = ('TIE! Rock and Rock');
 
-            //check for a tie, win, or loss
-            
-            if (playerSelection === computerSelection) {
+    } else if (playerSelection === 'paper') { 
 
-                alert(`${playerSelection} and ${computerSelection} it\'s a tie!!`);
+        computerSelection === 'scissors' ? result = ('YOU LOSE! Scissors beat Paper') :
+        computerSelection === 'rock' ? result = ('YOU WIN! Paper beats Rock') :
+        result = ('TIE! Paper and Paper');
 
-                // outcomes for ROCK playerChoice 
+    } else if (playerSelection === ('scissors')) { // Scissors
 
-            } else if (playerSelection === 'Rock' ) {
+        computerSelection === 'rock' ? result = ('YOU LOSE! Rock beats Scissors') :
+        computerSelection === 'paper' ? result = ('YOU WIN! Scissors beat Paper') :
+        result = ('TIE! Scissors and Scissors');
 
-                computerSelection === ('Scissors') ? alert(`${playerSelection} beats ${computerSelection} you Win!`) :
-                alert(`${playerSelection} is beaten by ${computerSelection} you Lose!`);
-    
+    } else {
 
-                // outcomes for SCISSORS playerChoice
-             } else if (playerSelection === 'Scissors') {
+        result = 'Thats not a valid entry....';
 
-                computerSelection === ('Paper') ? alert(`${playerSelection} beats ${computerSelection} you Win!`) :
-                alert(`${playerSelection} is beaten by ${computerSelection} you Lose!`);
+    }
 
-
-                // outcomes for PAPER playerChoice
-             } else {
-
-                computerSelection === ('Rock') ? alert(`${playerSelection} beats ${computerSelection} you Win!`) :
-                alert(`${playerSelection} is beaten by ${computerSelection} you Lose!`);
-
-             }
-
-             let restart = prompt('Play again?  "Y" for Yes');
-
-             if (restart === ('Y')  || restart === ('y')) {
-
-                continue;
-
-             } else {
-
-                break;
-             }
-
-        } else {
-
-            // notify of wrong answer, try again
-
-            alert('Wrong input try again...')
-        }
-    } 
-
+    return result;
 }
 
-playGame();
+const playerSelection = "Paper";
+const computerSelection = getComputerChoice();
+console.log(playRound(playerSelection, computerSelection));
 
-// get an answer from player
-// check if correct answer is provided
-// if incorrect answer display message
-// if correct answer break loop and continue 
+
 
 
 
