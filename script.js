@@ -17,6 +17,7 @@ let compScore = 0;
 let playerScore = 0;
 const playerScorePara= document.querySelector('.playerScore');
 const compScorePara= document.querySelector('.compScore');
+const winnerDiv= document.querySelector('.winner');
 const roundsDiv = document.querySelector('.rounds');
 const resultDiv = document.querySelector('.results');
 
@@ -25,8 +26,11 @@ function playRound (playerSelection, computerSelection) {
     let result = '';
     let counter = 0;
 
-    if (compScore === 5 || playerScore === 5) { //check the scores, if either === 5, prompt a restart
-        alert('RESTART THE GAME TO PLAY AGAIN');
+    if (compScore === 5){
+        winnerDiv.textContent = 'The Computer is the Winner! Hit Restart to play again.';
+        return;
+    }else if(playerScore === 5){
+        winnerDiv.textContent = 'You are the Winner! Hit Restart to play again.';
         return;
     }
 
@@ -60,7 +64,7 @@ function playRound (playerSelection, computerSelection) {
         result === ('YOU LOSE! Scissors beat Paper') ? counter = 2 :
         result === ('YOU WIN! Paper beats Rock') ? counter = 1 :
         counter = 3;
-        return counter;
+        winOrLoss(counter);
 
     } else if (playerSelection === ('scissors')) { // Scissors
 
@@ -72,11 +76,15 @@ function playRound (playerSelection, computerSelection) {
         result === ('YOU LOSE! Rock beats Scissors') ? counter = 2 :
         result === ('YOU WIN! Scissors beat Paper') ? counter = 1 :
         counter = 3;
-        return counter;
+        winOrLoss(counter);
 
     } else {
         alert('That is not an option... neither side gets points...');
     }
+
+    rounds++;
+    roundsDiv.textContent = rounds;
+
 
 } // end playRound --------------------------------------------------------------
 
