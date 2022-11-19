@@ -17,6 +17,8 @@ function getComputerChoice () { // generates random computer selection
 function playRound (playerSelection, computerSelection) { 
     let result = '';
     let counter = 0;
+
+    const resultDiv = document.querySelector('.results');
     // ----------------------------------------------------
     // values tracked by counter variable 
     // win = 1
@@ -29,7 +31,7 @@ function playRound (playerSelection, computerSelection) {
         computerSelection === 'paper' ? result = (`YOU LOSE! Paper beats Rock`) :
         computerSelection === 'scissors' ? result = ('YOU WIN! Rock beats Scissors') :
         result = ('TIE! Rock and Rock');
-        console.log(result);
+        resultDiv.textContent = result;
 
         result === (`YOU LOSE! Paper beats Rock`) ? counter = 2 :
         result === ('YOU WIN! Rock beats Scissors') ? counter = 1 :
@@ -41,7 +43,7 @@ function playRound (playerSelection, computerSelection) {
         computerSelection === 'scissors' ? result = ('YOU LOSE! Scissors beat Paper') :
         computerSelection === 'rock' ? result = ('YOU WIN! Paper beats Rock') :
         result = ('TIE! Paper and Paper');
-        console.log(result);
+        resultDiv.textContent = result;
 
         result === ('YOU LOSE! Scissors beat Paper') ? counter = 2 :
         result === ('YOU WIN! Paper beats Rock') ? counter = 1 :
@@ -53,7 +55,7 @@ function playRound (playerSelection, computerSelection) {
         computerSelection === 'rock' ? result = ('YOU LOSE! Rock beats Scissors') :
         computerSelection === 'paper' ? result = ('YOU WIN! Scissors beat Paper') :
         result = ('TIE! Scissors and Scissors');
-        console.log(result);
+        resultDiv.textContent = result;
 
         result === ('YOU LOSE! Rock beats Scissors') ? counter = 2 :
         result === ('YOU WIN! Scissors beat Paper') ? counter = 1 :
