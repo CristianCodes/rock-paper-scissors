@@ -93,6 +93,14 @@ scissorsBtn.addEventListener('click',() =>{
     playRound('scissors', getComputerChoice());
 })
 
+// diplay the points respectively and announce a winner once either one hits 5 points 
+//receive counter variable 
+//if 1 add point to player, add 1 to round
+//if 2 add point to computer, add 1 to round
+//if 3 add point to none, add 1 to round 
+
+
+
 // function game() {
 
 //     let compScore = 0;
