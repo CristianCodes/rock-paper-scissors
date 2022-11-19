@@ -15,15 +15,6 @@ function getComputerChoice () { // generates random computer selection
 
 
 function playRound (playerSelection, computerSelection) { 
-    // check for valid player response
-    while (playerSelection === null || playerSelection === ('')) {
-
-        alert('That\'s not a valid response... try again');
-        playerSelection = prompt('Choose Rock, Paper, or Scissors...');
-    }
-    // ----------------------------------------------------
-    // converts player response to lowercase
-    playerSelection = playerSelection.toLowerCase();
     let result = '';
     let counter = 0;
     // ----------------------------------------------------
