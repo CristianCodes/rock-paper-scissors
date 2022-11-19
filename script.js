@@ -12,13 +12,25 @@ function getComputerChoice () { // generates random computer selection
     
 }
 
+let rounds = 0;
+let compScore = 0;
+let playerScore = 0;
+const playerScorePara= document.querySelector('.playerScore');
+const compScorePara= document.querySelector('.compScore');
+const roundsDiv = document.querySelector('.rounds');
+const resultDiv = document.querySelector('.results');
 
 
 function playRound (playerSelection, computerSelection) { 
     let result = '';
     let counter = 0;
 
-    const resultDiv = document.querySelector('.results');
+    if (compScore === 5 || playerScore === 5) { //check the scores, if either === 5, prompt a restart
+        alert('RESTART THE GAME TO PLAY AGAIN');
+        return;
+    }
+
+    
     // ----------------------------------------------------
     // values tracked by counter variable 
     // win = 1
@@ -36,7 +48,7 @@ function playRound (playerSelection, computerSelection) {
         result === (`YOU LOSE! Paper beats Rock`) ? counter = 2 :
         result === ('YOU WIN! Rock beats Scissors') ? counter = 1 :
         counter = 3;
-        return counter;
+        winOrLoss(counter);
 
     } else if (playerSelection === 'paper') { 
 
@@ -99,42 +111,14 @@ scissorsBtn.addEventListener('click',() =>{
 //if 2 add point to computer, add 1 to round
 //if 3 add point to none, add 1 to round 
 
+function winOrLoss (counter) {
 
-
-// function game() {
-
-//     let compScore = 0;
-
-//     let playerScore = 0;
-
-//     for (i = 0; i < 5; i++) {
-
-//         let playerSelection = prompt('Choose Rock, Paper, or Scissors...');
-
-//         let computerSelection = getComputerChoice();
-
-//         let counter = playRound(playerSelection,computerSelection);
-
-//     // win = 1
-//     // loss = 2
-
-//         counter === 1 ? playerScore += 1 :
-//         counter === 2 ? compScore += 1 :
-//         playerScore += 0;
-        
-//         alert(`Your Score: ${playerScore} Computer Score : ${compScore}`);
-
-
-//     }
-
-//     playerScore > compScore ? alert(`YOU WON THE GAME!! Final Score YOU: ${playerScore} COMPUTER: ${compScore}`) :
-//     playerScore < compScore ? alert(`YOU LOSE THE GAME! Final Score YOU: ${playerScore} COMPUTER: ${compScore}`) :
-//     alert ('THE GAME ENDED IN A DRAW!');
-// }
-
-
-
-//keep score by checking if comp or player won
-
-// display winner at the end by comparing scores
+    if (counter === 1){
+        playerScore++;
+        playerScorePara.textContent = playerScore;
+    } else if (counter === 2) {
+        compScore++;
+        compScorePara.textContent = compScore;
+    } 
+}
 
