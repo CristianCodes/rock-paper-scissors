@@ -113,6 +113,12 @@ scissorsBtn.addEventListener('click',() =>{
     playRound('scissors', getComputerChoice());
 })
 
+//RESTART button code 
+const restartBtn = document.querySelector('#restart');
+
+restartBtn.addEventListener('click',restartGame);
+
+
 // diplay the points respectively and announce a winner once either one hits 5 points 
 //receive counter variable 
 //if 1 add point to player, add 1 to round
@@ -130,3 +136,13 @@ function winOrLoss (counter) {
     } 
 }
 
+function restartGame() {
+    playerScore = 0;
+    playerScorePara.textContent = playerScore;
+    compScore = 0;
+    compScorePara.textContent = compScore;
+    rounds = 0;
+    roundsDiv.textContent = rounds;
+    winnerDiv.textContent = '';
+    resultDiv.textContent = '';
+}
