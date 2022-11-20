@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.border {
+    border: 1px solid red;
+}
+
+h1 {
+    text-align: center;
+    margin: 50px 0;
+}
+
+/* player choice buttons */
+.p-choices {
+    height: 200px;
+    width: 200px;
+    margin-bottom: 25px;
+}
+
+.choices {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 50px;
+}
+
+.results {
+    font-size: 25px;
+    align-self: center;
+    text-align: center;
+    padding: 15px 30px;
+    height: 30px;
+    width: 500px;
+    margin-bottom: 25px;
+}
+
+.trackers {
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 125px;
+    margin-bottom: 15px;
+}
+
+.winner {
+    height: 50px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+}
+
+#restart {
+    font-size: 30px;
+    background-color: grey;
+    height: auto;
+    width: 200px;
+    text-align: center;
+    align-self: center;
+    border-radius: 5px;
+}

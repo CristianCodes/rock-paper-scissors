@@ -5,28 +5,35 @@
     <meta charset="UTF-8">
     <title>ROCK PAPER SCISSORS</title>
     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <button id="ROCK">ROCK</button>
+    <!-- util class = 'border' -->
 
-    <button id="PAPER">PAPER</button>
+    <h1>ROCK PAPER SCISSORS</h1>
 
-    <button id="SCISSORS">SCISSORS</button>
+    <div class="choices">
+        <button class = "p-choices"id="ROCK">ROCK</button>
+        <button class = "p-choices" id="PAPER">PAPER</button>
+        <button class = "p-choices" id="SCISSORS">SCISSORS</button>
+    </div>
 
     <div class="results"></div>
 
-    <div class="scores">
+    
+    <div class="trackers">
         <p >PLAYER SCORE: <span class="playerScore">0</span></p>
         <p>COMPUTER SCORE <span class="compScore">0</span></p>
+        <p>ROUND: <span class="rounds">0</span></p>
     </div>
 
-    <div>ROUND: <span class="rounds">0</span></div>
-    <br>
     <div class="winner"></div>
 
-    <button id="restart">RESTART</button>
+    <div id="restart">RESTART</div>
+
+    
 
 </body>
 

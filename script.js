@@ -41,40 +41,40 @@ function playRound (playerSelection, computerSelection) {
     // loss = 2
     // tie = 3
     // ----------------------------------------------------
-    // determines if player wins by returning counter value 
+    // determines if player wins by returning counter value and outputting result 
     if (playerSelection === 'rock') { 
 
-        computerSelection === 'paper' ? result = (`YOU LOSE! Paper beats Rock`) :
+        computerSelection === 'paper' ? result = (`ROUND LOST! Paper beats Rock`) :
         computerSelection === 'scissors' ? result = ('YOU WIN! Rock beats Scissors') :
         result = ('TIE! Rock and Rock');
         resultDiv.textContent = result;
 
-        result === (`YOU LOSE! Paper beats Rock`) ? counter = 2 :
-        result === ('YOU WIN! Rock beats Scissors') ? counter = 1 :
+        result === (`ROUND LOST! Paper beats Rock`) ? counter = 2 :
+        result === ('ROUND WON! Rock beats Scissors') ? counter = 1 :
         counter = 3;
         winOrLoss(counter);
 
     } else if (playerSelection === 'paper') { 
 
-        computerSelection === 'scissors' ? result = ('YOU LOSE! Scissors beat Paper') :
-        computerSelection === 'rock' ? result = ('YOU WIN! Paper beats Rock') :
+        computerSelection === 'scissors' ? result = ('ROUND LOST! Scissors beat Paper') :
+        computerSelection === 'rock' ? result = ('ROUND WON! Paper beats Rock') :
         result = ('TIE! Paper and Paper');
         resultDiv.textContent = result;
 
-        result === ('YOU LOSE! Scissors beat Paper') ? counter = 2 :
-        result === ('YOU WIN! Paper beats Rock') ? counter = 1 :
+        result === ('ROUND LOST! Scissors beat Paper') ? counter = 2 :
+        result === ('ROUND WON! Paper beats Rock') ? counter = 1 :
         counter = 3;
         winOrLoss(counter);
 
     } else if (playerSelection === ('scissors')) { // Scissors
 
-        computerSelection === 'rock' ? result = ('YOU LOSE! Rock beats Scissors') :
-        computerSelection === 'paper' ? result = ('YOU WIN! Scissors beat Paper') :
+        computerSelection === 'rock' ? result = ('ROUND LOST! Rock beats Scissors') :
+        computerSelection === 'paper' ? result = ('ROUND WON! Scissors beat Paper') :
         result = ('TIE! Scissors and Scissors');
         resultDiv.textContent = result;
 
-        result === ('YOU LOSE! Rock beats Scissors') ? counter = 2 :
-        result === ('YOU WIN! Scissors beat Paper') ? counter = 1 :
+        result === ('ROUND LOST! Rock beats Scissors') ? counter = 2 :
+        result === ('ROUND WON! Scissors beat Paper') ? counter = 1 :
         counter = 3;
         winOrLoss(counter);
 
