@@ -6,7 +6,20 @@
 body {
     height: 100vh;
     display: flex;
+    font-family: 'Luckiest Guy', cursive;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.main {
+    height: 800px;
+    width: 900px;
+    display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    background-color: black;
+    border: 5px solid black;
 }
 
 .border {
@@ -15,21 +28,27 @@ body {
 
 h1 {
     text-align: center;
-    margin: 50px 0;
+    margin: 15px;
+    font-size: 55px;
 }
 
-/* player choice buttons */
-.p-choices {
-    height: 200px;
-    width: 200px;
-    margin-bottom: 25px;
-}
 
 .choices {
+    background-color: white;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 15px 50px;
 }
+
+.choices img {
+    height: 200px;
+    width: 200px;
+}
+
+.choices img:hover {
+    transform: scale(1.1);
+}
+
 
 .results {
     font-size: 25px;
@@ -42,7 +61,7 @@ h1 {
 }
 
 .trackers {
-    font-size: 20px;
+    font-size: 30px;
     display: flex;
     justify-content: center;
     gap: 125px;
@@ -58,11 +77,18 @@ h1 {
 }
 
 #restart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 30px;
     background-color: grey;
-    height: auto;
+    height: 50px;
+    padding-top: 8px;
     width: 200px;
-    text-align: center;
     align-self: center;
     border-radius: 5px;
+}
+
+#restart:hover {
+    background-color: orange;
 }

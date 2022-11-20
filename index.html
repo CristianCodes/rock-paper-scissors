@@ -6,32 +6,41 @@
     <title>ROCK PAPER SCISSORS</title>
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="styles.css">
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
     <!-- util class = 'border' -->
 
-    <h1>ROCK PAPER SCISSORS</h1>
+    <div class="main">
 
-    <div class="choices">
-        <button class = "p-choices"id="ROCK">ROCK</button>
-        <button class = "p-choices" id="PAPER">PAPER</button>
-        <button class = "p-choices" id="SCISSORS">SCISSORS</button>
+        <h1>ROCK - PAPER - SCISSORS</h1>
+
+        <div class="choices">
+            <img  src="images/rock.svg" id="ROCK" alt="rock">
+            <img  src="images/paper.svg" id="PAPER" alt="paper">
+            <img  src="images/scissors.svg" id="SCISSORS" alt="scissors">
+        </div>
+
+        <div class="results"></div>
+        
+        <div class="trackers">
+            <p >PLAYER SCORE: <span class="playerScore">0</span></p>
+            <p>COMPUTER SCORE: <span class="compScore">0</span></p>
+            <p>ROUND: <span class="rounds">0</span></p>
+        </div>
+
+        <div class="winner"></div>
+
+        <div id="restart">RESTART</div>
+
     </div>
-
-    <div class="results"></div>
-
-    
-    <div class="trackers">
-        <p >PLAYER SCORE: <span class="playerScore">0</span></p>
-        <p>COMPUTER SCORE <span class="compScore">0</span></p>
-        <p>ROUND: <span class="rounds">0</span></p>
-    </div>
-
-    <div class="winner"></div>
-
-    <div id="restart">RESTART</div>
 
     
 

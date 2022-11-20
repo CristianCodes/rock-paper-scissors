@@ -28,9 +28,11 @@ function playRound (playerSelection, computerSelection) {
 
     if (compScore === 5){
         winnerDiv.textContent = 'The Computer is the Winner! Hit Restart to play again.';
+        winnerDiv.style.color = 'red';
         return;
     }else if(playerScore === 5){
         winnerDiv.textContent = 'You are the Winner! Hit Restart to play again.';
+        winnerDiv.style.color = 'green';
         return;
     }
 
@@ -45,7 +47,7 @@ function playRound (playerSelection, computerSelection) {
     if (playerSelection === 'rock') { 
 
         computerSelection === 'paper' ? result = (`ROUND LOST! Paper beats Rock`) :
-        computerSelection === 'scissors' ? result = ('YOU WIN! Rock beats Scissors') :
+        computerSelection === 'scissors' ? result = ('ROUND WON! Rock beats Scissors') :
         result = ('TIE! Rock and Rock');
         resultDiv.textContent = result;
 
@@ -130,9 +132,12 @@ function winOrLoss (counter) {
     if (counter === 1){
         playerScore++;
         playerScorePara.textContent = playerScore;
+        playerScorePara.style.color = 'green';
     } else if (counter === 2) {
         compScore++;
         compScorePara.textContent = compScore;
+        compScorePara.style.color = 'red';
+
     } 
 }
 
@@ -145,4 +150,6 @@ function restartGame() {
     roundsDiv.textContent = rounds;
     winnerDiv.textContent = '';
     resultDiv.textContent = '';
+    compScorePara.style.color = 'white';
+    playerScorePara.style.color = 'white';
 }
